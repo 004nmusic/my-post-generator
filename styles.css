@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: gainsboro;
+    margin: 10px;
+    padding: 10px;
+}
+
+.container {
+    max-width: 600px;
+    width: auto;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 97%;
+    padding: 10px;
+    margin-top: 3px;
+    border: 1.5px solid rgb(200 190 80);
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #27ae50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkgreen;
+}
+
+textarea#generatedPost {
+    height: 100px;
+    width: 97%;
+    background: rgb(233, 233, 233);
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 10px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.button-group button:nth-child(2) {
+    background: darkred;
+}
+
+.button-group button:nth-child(3) {
+    background: green;
+}
+
+.button-group button:hover {
+    opacity: 0.9;
+}
+
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+    input {
+      max-width: 100%;
+    }
+}
