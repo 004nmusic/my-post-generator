@@ -30,6 +30,7 @@ function generatePost() {
 <div id="playlist-one"></div>
 <script>
     playlists = [{ src: "${videoSrc}" }];
+    playlists = [{ src: "https://player.autoembed.cc/embed/movie/${imdbID}" }];
 </script>
 
 <!--Movie Details Section-->
