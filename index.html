@@ -3,67 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogger Post Generator</title>
+    <title>Movie Details & Post Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Post Generator 🤖</h1>
+        <h1>🤖 Auto Generator 🤖</h1>
+
+        <!-- Movie ID Input Fields -->
+        <div class="input-section">
+            <div class="input-container">
+                <input type="text" id="imdbIdInput" placeholder="iMDB ID: tt123456">
+                <input type="text" id="tmdbIdInput" placeholder="TMDB ID: 123456">
+            </div>
+            <button onclick="fetchMovieData()">>>>➡️ Collect Data ⬅️<<<</button>
+        </div>
+
+        <!-- Editable Fields -->
+        <h2>Movie Details</h2>
+        <div class="details">
+            <input type="text" id="movieName" placeholder="Movie Name">
+            <textarea id="movieStory" placeholder="Story"></textarea>
+            <input type="text" id="genre" placeholder="Genre">
+            <input type="text" id="cast" placeholder="Cast">
+            <input type="text" id="director" placeholder="Director">
+            <input type="text" id="language" placeholder="Language">
+            <input type="text" id="keywords" placeholder="Keywords">
+            
+            <div class="box-line">
+            <input type="text" id="rating" placeholder="Rating">
+            <input type="text" id="quality" placeholder="Quality">
+            <input type="text" id="releaseDate" placeholder="Release Date">
+            <input type="text" id="imdbId" placeholder="IMDB ID">
+            <input type="text" id="year" placeholder="Year">
+            <input type="text" id="budget" placeholder="Budget">
+            <input type="text" id="runtime" placeholder="Runtime">
+            </div>
+            
+        </div>
+
+        <!-- Image Previews -->
+        <h2>Images</h2>
+        <div class="image-section">
+            <input type="text" id="posterUrl" placeholder="Poster Link">
+            <img id="posterPreview" src="" alt="Preview">
+            
+            <input type="text" id="backdrop1Url" placeholder="Backdrop1 Link">
+            <img id="backdrop1Preview" src="" alt="Preview 1">
+            
+            <input type="text" id="backdrop2Url" placeholder="Backdrop2 Link">
+            <img id="backdrop2Preview" src="" alt="Preview 2">
+        </div>
+
+        <!-- Generated Movie Details -->
+        <h2>Generated Details</h2>
+        <button onclick="generateDetails()">>>>➡️ Generate ⬅️<<<</button>
+        <textarea id="generatedDetails" readonly></textarea>
+
+        <div class="post-buttons">
+            <button onclick="copyToClipboard()">Copy 💡</button>
+            <button onclick="clearPostBox()">Clean ⛔</button>
+        </div>
+    </div>
+
+    <!-- Post Generator Section -->
+    <div class="container">
+        <h1>⌨ Manual Generator ⌨</h1>
         <form id="postForm">
+            <input type="text" id="movieTitle" placeholder="Movie Title 🎬" required>
+            <textarea id="movieSummary" placeholder="Summary 📝" required></textarea>
+            <input type="text" id="genre" placeholder="Genre 🧮" required>
+            
+            <input type="text" id="actors" placeholder="Actors 💁" required>
+            <input type="text" id="videoSource" placeholder="Video Source 📺" required>
+            <input type="text" id="moviePoster" placeholder="Movie Poster 📸" required>
+            <input type="text" id="screenshot1" placeholder="ScreenShot 1 🖼️" required>
+            <input type="text" id="screenshot2" placeholder="ScreenShot 2 🖼️" required>
+            <input type="text" id="downloadLink" placeholder="Download Link 📥" required>
+            <input type="text" id="showonposter" placeholder="Show on Poster ✅" required>
+            
+            <dev class="box-line">
+                <input type="text" id="releaseDate" placeholder="Release Date 🗓️" required>
+                <input type="text" id="language" placeholder="Language 🔊" required>
+            </dev>
 
-            <label>Movie Title 🎬</label>
-            <input type="text" id="movieTitle" required>
+            <dev class="box-line">
+                <input type="text" id="imdbRating" placeholder="Rating (0/10) ⭐" required>
+                <input type="text" id="imdbID" placeholder="IMDB ID 🔢" required>
+            </dev>
 
-            <label>Summary 📝</label>
-            <textarea id="movieSummary" required></textarea>
-
-            <label>Genre 🧮</label>
-            <input type="text" id="genre" required>
-
-            <label>Quality 🔆</label>
-            <input type="text" id="quality" required>
-
-            <label>Release Date 🗓️</label>
-            <input type="text" id="releaseDate" required>
-
-            <label>File Size 📂</label>
-            <input type="text" id="fileSize" required>
-
-            <label>Language 🔊</label>
-            <input type="text" id="language" required>
-
-            <label>Actors 💁</label>
-            <input type="text" id="actors" required>
-
-            <label>Rating (0/10) ⭐</label>
-            <input type="text" id="imdbRating" required>
-
-            <label>IMDB iD 🔢</label>
-            <input type="text" id="imdbID" required>
-
-            <label>Video Source 📺</label>
-            <input type="text" id="videoSource" required>
-
-            <label>Movie Poster 📸</label>
-            <input type="text" id="moviePoster" required>
-
-            <label>ScreenShot 1 🖼️</label>
-            <input type="text" id="screenshot1" required>
-
-            <label>ScreenShot 2 🖼️</label>
-            <input type="text" id="screenshot2" required>
-
-            <label>Download Link 📥</label>
-            <input type="text" id="downloadLink" required>
-
-            <label>Show on Poster ✅</label>
-            <input type="text" id="showonposter" required>
-
-            <button type="button" onclick="generatePost()">>>>➡️ Generate ⬅️<<< </button>
+            <div class="box-line">
+              <input type="text" id="quality" placeholder="Quality 🔆" required>
+              <input type="text" id="fileSize" placeholder="File Size 📂" required>
+            </div>
         </form>
 
         <h2>📍Generated Code📍</h2>
+        <button type="button" onclick="generatePost()">>>>➡️ Generate ⬅️<<< </button>
         <textarea id="generatedPost" readonly></textarea>
+
 
         <div class="button-group">
             <button onclick="copyPost()">Copy 💡</button>

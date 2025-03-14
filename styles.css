@@ -1,57 +1,93 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: gainsboro;
-    margin: 10px;
-    padding: 10px;
+    background-color: #1e1e1e;
+    color: gainsboro;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
 }
 
 .container {
     max-width: 600px;
     width: auto;
     margin: auto;
-    background: white;
+    background: #2c2c2c;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.37);
 }
 
+.box-line {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+}
+
+/* Headings */
 h1, h2 {
+    color: #ffcc00;
     text-align: center;
 }
 
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-}
-
+/* Input Fields */
 input, textarea {
     width: 97%;
     padding: 10px;
     margin-top: 3px;
     border: 1.5px solid rgb(200 190 80);
     border-radius: 10px;
+    background: #333;
+    color: white;
 }
 
+/* Textarea */
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* Button Styling */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 10px 15px;
     margin-top: 20px;
-    background: #27ae50;
+    background: #20aa49;
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+    font-weight: bold;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 button:hover {
-    background: darkgreen;
+    opacity: 0.8;
 }
 
-textarea#generatedPost {
-    height: 100px;
-    width: 97%;
-    background: rgb(233, 233, 233);
+/* Image Previews */
+img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #ffcc00;
 }
 
 /* Button Group Styling */
@@ -65,7 +101,6 @@ textarea#generatedPost {
     flex: 1;
     padding: 10px;
     background: orange;
-    color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -80,12 +115,42 @@ textarea#generatedPost {
 }
 
 .button-group button:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
-  /* Responsive for Mobile */
-  @media (max-width: 768px) {
-    input {
-      max-width: 100%;
+.post-buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.post-buttons button {
+    flex: 1;
+    padding: 10px;
+    background: orange;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.post-buttons button:nth-child(2) {
+    background: darkred;
+}
+.post-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* Mobile View */
+@media (max-width: 0px) {
+    .input-container {
+        flex-direction: column;
+    }
+    .box-line {
+        flex-direction: column;
     }
 }
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+
+}
+
